@@ -12,14 +12,14 @@ public class SimpExec {
         CountDownLatch cdl2 = new CountDownLatch(3);
         CountDownLatch cdl3 = new CountDownLatch(3);
         CountDownLatch cdl4 = new CountDownLatch(3);
-        ExecutorService es = Executors.newFixedThreadPool(3);
+        ExecutorService es = Executors.newFixedThreadPool(2);
         System.out.println("Зaпycк потоков");
         es.execute(new MyThread(cdl1, "А"));
         es.execute(new MyThread(cdl2, "В"));
         es.execute(new MyThread(cdl3, "С"));
         es.execute(new MyThread(cdl4, "D"));
         try {
-            cdl1.await();
+           cdl1.await();
             cdl2.await();
             cdl3.await();
             cdl4.await();
