@@ -7,9 +7,9 @@ public class MyThread implements Runnable {
     String name;
     CountDownLatch latch;
 
-    public MyThread(CountDownLatch cdl1, String а) {
+    public MyThread(CountDownLatch cdl1, String a) {
         latch = cdl1;
-        name = а;
+        name = a;
         new Thread(this);
     }
     /**
